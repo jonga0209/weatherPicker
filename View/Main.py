@@ -1,5 +1,6 @@
+
 import sys
-from PyQt5.QtWidgets import QApplication, QWidget
+from PyQt5.QtWidgets import QApplication, QWidget, QLabel, QPushButton
 
 
 class MyApp(QWidget):
@@ -9,15 +10,19 @@ class MyApp(QWidget):
         self.initUI()
 
     def initUI(self):
-        self.setWindowTitle('My First Application')
-        self.move(300, 300)
-        self.resize(400, 200)
+
+        btn1 = QPushButton('옷장', self)
+        btn1.setStyleSheet('QPushButton {background-color: #A3C1DA; color: blue;}')
+        btn1.move(1200, 50)
+        btn2 = QPushButton('Button2', self)
+        btn2.move(80, 53)
+
+        self.setWindowTitle('Absolute Positioning')
+        self.setGeometry(300, 50, 1300, 800)
         self.show()
 
 
 if __name__ == '__main__':
-   app = QApplication(sys.argv)
-   ex = MyApp()
-   sys.exit(app.exec_())
-   print("test")
-   print("test")
+    app = QApplication(sys.argv)
+    ex = MyApp()
+    sys.exit(app.exec_())
